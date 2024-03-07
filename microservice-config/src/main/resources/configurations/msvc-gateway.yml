@@ -1,9 +1,10 @@
----
 eureka:
   client:
     register-with-eureka: false
+
 server:
   port: 8080
+
 spring:
   application:
     name: msvc-gateway
@@ -16,8 +17,8 @@ spring:
         - id: students
           uri: http://localhost:8090
           predicates:
-            - Path=/api/student/***
+            - Path=/api/student/**
         - id: courses
           uri: http://localhost:9090
           predicates:
-            - Path=/api/course/***
+            - Path=/api/course/**

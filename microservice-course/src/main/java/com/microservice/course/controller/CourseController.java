@@ -14,29 +14,24 @@ public class CourseController {
     @Autowired
     private ICourseService courseService;
 
-
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
-    public void saveCourse(@RequestBody Course course) {
+    public void saveStudent(@RequestBody Course course) {
         courseService.save(course);
     }
 
-
     @GetMapping("/all")
-    public ResponseEntity<?> findAllCourse() {
+    public ResponseEntity<?> findAllStudent() {
         return ResponseEntity.ok(courseService.findAll());
     }
-
 
     @GetMapping("/search/{id}")
     public ResponseEntity<?> findById(@PathVariable Long id) {
         return ResponseEntity.ok(courseService.findById(id));
     }
 
-
     @GetMapping("/search-student/{idCourse}")
-    public ResponseEntity<?> findStudentsByIdCourse(@PathVariable Long idCourse) {
-        return  ResponseEntity.ok(courseService.findStudentsByIdCourse(idCourse));
+    public ResponseEntity<?> findStudentsByIdCourse(@PathVariable Long idCourse){
+        return ResponseEntity.ok(courseService.findStudentsByIdCourse(idCourse));
     }
-
 }

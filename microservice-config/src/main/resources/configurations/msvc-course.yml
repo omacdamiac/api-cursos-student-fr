@@ -1,6 +1,6 @@
----
 server:
   port: 9090
+
 spring:
   application:
     name: msvc-course
@@ -14,6 +14,7 @@ spring:
       ddl-auto: create
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+
 eureka:
   instance:
     hostname: localhost
